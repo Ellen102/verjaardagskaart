@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="nl">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>Verjaardagskaart</title>
-    <style type="text/css">
+    <style>
         body {
             counter-reset: h2counter;
             counter-reset: stapcounter;
@@ -30,7 +29,6 @@
         .stap {
             background-color: aliceblue;
             padding: 2px;
-            /*border: 1px solid black;*/
             border-left: 3px solid black;
             margin: 2px;
             padding-left: 5px;
@@ -73,15 +71,15 @@
         }
 
     </style>
-    <script type="text/javascript" src="javascript/ScratchLN.js" charset="utf-8"></script>
+    <script src="javascript/ScratchLN.js" ></script>
 
     <script>
         window.onload = function() {
             scratchLN.scratchify(".scratch", {
                 media: 'static/blocks-media/', //locatie van de afbeeldingen zoals de groene vlag etc.
-                locale: "nl", //Taal
+                locale: "en", //Taal
                 zoom: {
-                    startScale: 0.5 //grote van de blokken
+                    startScale: 1 //grote van de blokken
                 }
             });
         };
@@ -114,13 +112,7 @@
 
         <div class="uitleg">
             Jouw code zou op de code hieronder moeten lijken. Kies zelf de getallen!
-            <div><code class="scratch">
-                    when gf clicked
-                    go to x:{} y:{}
-                    repeat until &lt;touching color #c170db&gt;
-                    change y by {}
-                    end
-                </code></div>
+            <!-- TODO: plaats je code hier -->
         </div>
     </section>
 
@@ -146,7 +138,7 @@
         </div>
         <div class="uitleg">
             Als we de ballon nu sneller willen laten draaien, moeten we dit op twee plaatsen aanpassen. Een keer in het herhaal-block en één keer in de deling. Je kan gemakkelijk één van de twee vergeten aanpassen... Gelukkig is hier een oplossing voor! We gebruiken hiervoor een variabele, bijvoorbeeld
-            <div class="inlineScratch"><code class="scratch">(draai snelheid)</code></div>. Je kan een variable maken in de toolbox bij de categorie <i>Variable</i>.
+            <div class="inlineScratch"><code class="scratch">(i)</code></div>. Je kan een variable maken in de toolbox bij de categorie <i>Variable</i>.
         </div>
         <div class="stap">
             Pas je code aan zodat je een variable gebruikt om de snelheid waarmee de ballon draait aan te geven.
@@ -155,9 +147,9 @@
             Je code ziet er nu als volgt uit:
             <div><code class="scratch">
                     when gf clicked
-                    set [draai snelheid] to {}
-                    repeat (draai snelheid)
-                    turn cw ({360}/(draai snelheid)) degrees
+                    set [i] to {}
+                    repeat (i)
+                    turn cw ({360}/(i)) degrees
                     end
                 </code></div>
         </div>
@@ -268,32 +260,7 @@
     </section>
     <section>
         <h2>Uiteindelijke oplossing</h2>
-        <div><code class="scratch">
-                when gf clicked
-                hide
-                repeat {2}
-                create clone of [mezelf]
-                end
-
-                when i start as a clone
-                set [ghost] effect to {10}
-                switch costume to (pick random {1} to {3})
-                show
-                go to x: (pick random {-200} to {200}) y:{-300}
-                repeat until &lt;touching color #c170db&gt;
-                change y by {20}
-                end
-
-                when i start as a clone
-                set [teller] to {}
-                repeat (teller)
-                turn cw ({360}/(teller)) degrees
-                end
-
-                when this sprite clicked
-                start sound [Pop]
-                delete this clone
-            </code></div>
+        <!--TODO: plaats je code hier -->
     </section>
     <section>
         <h2>Verdere stappen...</h2>
@@ -303,5 +270,4 @@
         </div>
     </section>
 </body>
-
 </html>
